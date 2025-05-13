@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>To Do List</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" type="text/css">
+</head>
+
+<body>
+  <main>
+    <header class="list-header">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"
+        class="list-header__icon">
+        <g id="Iconly/Light/Paper">
+          <g id="Paper">
+            <path id="Stroke 1" fill-rule="evenodd" clip-rule="evenodd"
+              d="M14.7378 2.76181H8.0848C6.0048 2.75381 4.2998 4.41181 4.2508 6.49081V17.2038C4.2048 19.3168 5.8798 21.0678 7.9928 21.1148C8.0238 21.1148 8.0538 21.1158 8.0848 21.1148H16.0738C18.1678 21.0298 19.8178 19.2998 19.8028 17.2038V8.03781L14.7378 2.76181Z"
+              stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+            <path id="Stroke 3" d="M14.4751 2.75V5.659C14.4751 7.079 15.6231 8.23 17.0431 8.234H19.7981"
+              stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+            <path id="Stroke 5" d="M14.2881 15.3585H8.88806" stroke="currentColor" stroke-width="1.5"
+              stroke-linecap="round" stroke-linejoin="round" />
+            <path id="Stroke 7" d="M12.2432 11.606H8.88721" stroke="currentColor" stroke-width="1.5"
+              stroke-linecap="round" stroke-linejoin="round" />
+          </g>
+        </g>
+      </svg>
+      <h1>To Do List</h1>
+    </header>
+    <section class="list-items">
+      <template id="list-item-template">
+        <li class="list-item">
+          <div class="list-item__checkmark">
+            <svg width="8" height="8" viewBox="0 0 8 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M1 5L3 6.5L7 1" stroke="black" stroke-width="1.5" stroke-linecap="round"
+                stroke-linejoin="round" />
+            </svg>
+          </div>
+          <div class="list-item__title"><span>Todo Item</span></div>
+          <a href="javascript:void(0);" class="list-item__important">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <g id="Iconly/Bold/Star">
+                <g id="Star">
+                  <path id="Star_2"
+                    d="M17.9184 14.3201C17.6594 14.5711 17.5404 14.9341 17.5994 15.2901L18.4884 20.2101C18.5634 20.6271 18.3874 21.0491 18.0384 21.2901C17.6964 21.5401 17.2414 21.5701 16.8684 21.3701L12.4394 19.0601C12.2854 18.9781 12.1144 18.9341 11.9394 18.9291H11.6684C11.5744 18.9431 11.4824 18.9731 11.3984 19.0191L6.96839 21.3401C6.74939 21.4501 6.50139 21.4891 6.25839 21.4501C5.66639 21.3381 5.27139 20.7741 5.36839 20.1791L6.25839 15.2591C6.31739 14.9001 6.19839 14.5351 5.93939 14.2801L2.32839 10.7801C2.02639 10.4871 1.92139 10.0471 2.05939 9.65012C2.19339 9.25412 2.53539 8.96512 2.94839 8.90012L7.91839 8.17912C8.29639 8.14012 8.62839 7.91012 8.79839 7.57012L10.9884 3.08012C11.0404 2.98012 11.1074 2.88812 11.1884 2.81012L11.2784 2.74012C11.3254 2.68812 11.3794 2.64512 11.4394 2.61012L11.5484 2.57012L11.7184 2.50012H12.1394C12.5154 2.53912 12.8464 2.76412 13.0194 3.10012L15.2384 7.57012C15.3984 7.89712 15.7094 8.12412 16.0684 8.17912L21.0384 8.90012C21.4584 8.96012 21.8094 9.25012 21.9484 9.65012C22.0794 10.0511 21.9664 10.4911 21.6584 10.7801L17.9184 14.3201Z"
+                    stroke="currentColor" stroke-width="1.5" fill="transparent" />
+                </g>
+              </g>
+            </svg>
+          </a>
+          <div class="list-item__menu-wrapper">
+            <a href="javascript:void(0);" class="list-item__menu-button">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <g id="Iconly/Light/Category">
+                  <g id="Category">
+                    <path id="Stroke 1" fill-rule="evenodd" clip-rule="evenodd"
+                      d="M3 6.5C3 3.87479 3.02811 3 6.5 3C9.97189 3 10 3.87479 10 6.5C10 9.12521 10.0111 10 6.5 10C2.98893 10 3 9.12521 3 6.5Z"
+                      stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                    <path id="Stroke 3" fill-rule="evenodd" clip-rule="evenodd"
+                      d="M14 6.5C14 3.87479 14.0281 3 17.5 3C20.9719 3 21 3.87479 21 6.5C21 9.12521 21.0111 10 17.5 10C13.9889 10 14 9.12521 14 6.5Z"
+                      stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                    <path id="Stroke 5" fill-rule="evenodd" clip-rule="evenodd"
+                      d="M3 17.5C3 14.8748 3.02811 14 6.5 14C9.97189 14 10 14.8748 10 17.5C10 20.1252 10.0111 21 6.5 21C2.98893 21 3 20.1252 3 17.5Z"
+                      stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                    <path id="Stroke 7" fill-rule="evenodd" clip-rule="evenodd"
+                      d="M14 17.5C14 14.8748 14.0281 14 17.5 14C20.9719 14 21 14.8748 21 17.5C21 20.1252 21.0111 21 17.5 21C13.9889 21 14 20.1252 14 17.5Z"
+                      stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                  </g>
+                </g>
+              </svg>
+            </a>
+            <div class="list-item__menu-base">
+              <a href="javascript:void(0);" class="list-item__delete-button">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <g id="Iconly/Light/Delete">
+                    <g id="Delete">
+                      <path id="Stroke 1"
+                        d="M19.325 9.4682C19.325 9.4682 18.782 16.2032 18.467 19.0402C18.317 20.3952 17.48 21.1892 16.109 21.2142C13.5 21.2612 10.888 21.2642 8.28003 21.2092C6.96103 21.1822 6.13803 20.3782 5.99103 19.0472C5.67403 16.1852 5.13403 9.4682 5.13403 9.4682"
+                        stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                      <path id="Stroke 3" d="M20.7082 6.23969H3.75024" stroke="currentColor" stroke-width="1.5"
+                        stroke-linecap="round" stroke-linejoin="round" />
+                      <path id="Stroke 5"
+                        d="M17.4406 6.23967C16.6556 6.23967 15.9796 5.68467 15.8256 4.91567L15.5826 3.69967C15.4326 3.13867 14.9246 2.75067 14.3456 2.75067H10.1126C9.53358 2.75067 9.02558 3.13867 8.87558 3.69967L8.63258 4.91567C8.47858 5.68467 7.80258 6.23967 7.01758 6.23967"
+                        stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                    </g>
+                  </g>
+                </svg>
+              </a>
+              <a href="javascript:void(0);">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <g id="Iconly/Light-Outline/Calendar">
+                    <g id="Calendar">
+                      <path id="Fill 1" fill-rule="evenodd" clip-rule="evenodd"
+                        d="M20.6665 9.9043H2.84253C2.42853 9.9043 2.09253 9.5683 2.09253 9.1543C2.09253 8.7403 2.42853 8.4043 2.84253 8.4043H20.6665C21.0805 8.4043 21.4165 8.7403 21.4165 9.1543C21.4165 9.5683 21.0805 9.9043 20.6665 9.9043Z"
+                        fill="currentColor" />
+                      <path id="Fill 3" fill-rule="evenodd" clip-rule="evenodd"
+                        d="M16.2013 13.8096C15.7873 13.8096 15.4473 13.4736 15.4473 13.0596C15.4473 12.6456 15.7783 12.3096 16.1923 12.3096H16.2013C16.6153 12.3096 16.9513 12.6456 16.9513 13.0596C16.9513 13.4736 16.6153 13.8096 16.2013 13.8096Z"
+                        fill="currentColor" />
+                      <path id="Fill 5" fill-rule="evenodd" clip-rule="evenodd"
+                        d="M11.7638 13.8096C11.3498 13.8096 11.0098 13.4736 11.0098 13.0596C11.0098 12.6456 11.3408 12.3096 11.7548 12.3096H11.7638C12.1778 12.3096 12.5138 12.6456 12.5138 13.0596C12.5138 13.4736 12.1778 13.8096 11.7638 13.8096Z"
+                        fill="currentColor" />
+                      <path id="Fill 7" fill-rule="evenodd" clip-rule="evenodd"
+                        d="M7.31701 13.8096C6.90301 13.8096 6.56201 13.4736 6.56201 13.0596C6.56201 12.6456 6.89401 12.3096 7.30801 12.3096H7.31701C7.73101 12.3096 8.06701 12.6456 8.06701 13.0596C8.06701 13.4736 7.73101 13.8096 7.31701 13.8096Z"
+                        fill="currentColor" />
+                      <path id="Fill 9" fill-rule="evenodd" clip-rule="evenodd"
+                        d="M16.2013 17.6963C15.7873 17.6963 15.4473 17.3603 15.4473 16.9463C15.4473 16.5323 15.7783 16.1963 16.1923 16.1963H16.2013C16.6153 16.1963 16.9513 16.5323 16.9513 16.9463C16.9513 17.3603 16.6153 17.6963 16.2013 17.6963Z"
+                        fill="currentColor" />
+                      <path id="Fill 11" fill-rule="evenodd" clip-rule="evenodd"
+                        d="M11.7638 17.6963C11.3498 17.6963 11.0098 17.3603 11.0098 16.9463C11.0098 16.5323 11.3408 16.1963 11.7548 16.1963H11.7638C12.1778 16.1963 12.5138 16.5323 12.5138 16.9463C12.5138 17.3603 12.1778 17.6963 11.7638 17.6963Z"
+                        fill="currentColor" />
+                      <path id="Fill 13" fill-rule="evenodd" clip-rule="evenodd"
+                        d="M7.31701 17.6963C6.90301 17.6963 6.56201 17.3603 6.56201 16.9463C6.56201 16.5323 6.89401 16.1963 7.30801 16.1963H7.31701C7.73101 16.1963 8.06701 16.5323 8.06701 16.9463C8.06701 17.3603 7.73101 17.6963 7.31701 17.6963Z"
+                        fill="currentColor" />
+                      <path id="Fill 15" fill-rule="evenodd" clip-rule="evenodd"
+                        d="M15.7935 5.791C15.3795 5.791 15.0435 5.455 15.0435 5.041V1.75C15.0435 1.336 15.3795 1 15.7935 1C16.2075 1 16.5435 1.336 16.5435 1.75V5.041C16.5435 5.455 16.2075 5.791 15.7935 5.791Z"
+                        fill="currentColor" />
+                      <path id="Fill 17" fill-rule="evenodd" clip-rule="evenodd"
+                        d="M7.71533 5.791C7.30133 5.791 6.96533 5.455 6.96533 5.041V1.75C6.96533 1.336 7.30133 1 7.71533 1C8.12933 1 8.46533 1.336 8.46533 1.75V5.041C8.46533 5.455 8.12933 5.791 7.71533 5.791Z"
+                        fill="currentColor" />
+                      <g id="Group 21">
+                        <mask id="mask0" mask-type="alpha" maskUnits="userSpaceOnUse" x="2" y="2" width="20"
+                          height="21">
+                          <path id="Clip 20" fill-rule="evenodd" clip-rule="evenodd" d="M2 2.5791H21.5V22.5H2V2.5791Z"
+                            fill="white" />
+                        </mask>
+                        <g mask="url(#mask0)">
+                          <path id="Fill 19" fill-rule="evenodd" clip-rule="evenodd"
+                            d="M7.521 4.0791C4.928 4.0791 3.5 5.4621 3.5 7.9731V17.0221C3.5 19.5881 4.928 21.0001 7.521 21.0001H15.979C18.572 21.0001 20 19.6141 20 17.0981V7.9731C20.004 6.7381 19.672 5.7781 19.013 5.1181C18.335 4.4381 17.29 4.0791 15.988 4.0791H7.521ZM15.979 22.5001H7.521C4.116 22.5001 2 20.4011 2 17.0221V7.9731C2 4.6451 4.116 2.5791 7.521 2.5791H15.988C17.697 2.5791 19.11 3.0911 20.075 4.0581C21.012 4.9991 21.505 6.3521 21.5 7.9751V17.0981C21.5 20.4301 19.384 22.5001 15.979 22.5001Z"
+                            fill="currentColor" />
+                        </g>
+                      </g>
+                    </g>
+                  </g>
+                </svg>
+              </a>
+              <a href="javascript:void(0);">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <g id="Iconly/Light-Outline/Document">
+                    <g id="Document">
+                      <path id="Fill 1" fill-rule="evenodd" clip-rule="evenodd"
+                        d="M15.7158 16.9738H8.49585C8.08185 16.9738 7.74585 16.6378 7.74585 16.2238C7.74585 15.8098 8.08185 15.4738 8.49585 15.4738H15.7158C16.1298 15.4738 16.4658 15.8098 16.4658 16.2238C16.4658 16.6378 16.1298 16.9738 15.7158 16.9738Z"
+                        fill="currentColor" />
+                      <path id="Fill 3" fill-rule="evenodd" clip-rule="evenodd"
+                        d="M15.7158 12.7872H8.49585C8.08185 12.7872 7.74585 12.4512 7.74585 12.0372C7.74585 11.6232 8.08185 11.2872 8.49585 11.2872H15.7158C16.1298 11.2872 16.4658 11.6232 16.4658 12.0372C16.4658 12.4512 16.1298 12.7872 15.7158 12.7872Z"
+                        fill="currentColor" />
+                      <path id="Fill 5" fill-rule="evenodd" clip-rule="evenodd"
+                        d="M11.2506 8.61047H8.49561C8.08161 8.61047 7.74561 8.27447 7.74561 7.86047C7.74561 7.44647 8.08161 7.11047 8.49561 7.11047H11.2506C11.6646 7.11047 12.0006 7.44647 12.0006 7.86047C12.0006 8.27447 11.6646 8.61047 11.2506 8.61047Z"
+                        fill="currentColor" />
+                      <g id="Group 9">
+                        <mask id="mask0" mask-type="alpha" maskUnits="userSpaceOnUse" x="3" y="2" width="19"
+                          height="20">
+                          <path id="Clip 8" fill-rule="evenodd" clip-rule="evenodd"
+                            d="M3 2.00024H21.1647V21.91H3V2.00024Z" fill="white" />
+                        </mask>
+                        <g mask="url(#mask0)">
+                          <path id="Fill 7" fill-rule="evenodd" clip-rule="evenodd"
+                            d="M15.9088 3.5L8.21976 3.504C5.89176 3.518 4.49976 4.958 4.49976 7.357V16.553C4.49976 18.968 5.90476 20.41 8.25576 20.41L15.9448 20.407C18.2728 20.393 19.6648 18.951 19.6648 16.553V7.357C19.6648 4.942 18.2608 3.5 15.9088 3.5ZM8.25676 21.91C5.11276 21.91 2.99976 19.757 2.99976 16.553V7.357C2.99976 4.124 5.04676 2.023 8.21476 2.004L15.9078 2H15.9088C19.0528 2 21.1648 4.153 21.1648 7.357V16.553C21.1648 19.785 19.1178 21.887 15.9498 21.907L8.25676 21.91Z"
+                            fill="currentColor" />
+                        </g>
+                      </g>
+                    </g>
+                  </g>
+                </svg>
+              </a>
+              <a href="javascript:void(0);" class="list-item__close">
+                <svg width="10" height="10" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <rect x="12.2635" y="0.949738" width="2" height="16" rx="1" transform="rotate(45 12.2635 0.949738)"
+                    fill="currentColor" />
+                  <rect x="13.6777" y="12.2635" width="2" height="16" rx="1" transform="rotate(135 13.6777 12.2635)"
+                    fill="currentColor" />
+                </svg>
+              </a>
+            </div>
+          </div>
+        </li>
+      </template>
+      <ul>
+      </ul>
+    </section>
+
+    <section class="add-panel">
+      <div>
+        <input type="text" class="add-panel__input">
+        <button class="add-panel__button">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <g id="Iconly/Light-Outline/Send">
+              <g id="Send">
+                <mask id="mask0" mask-type="alpha" maskUnits="userSpaceOnUse" x="2" y="3" width="20" height="20">
+                  <path id="Clip 2" fill-rule="evenodd" clip-rule="evenodd" d="M2 3.00037H21.499V22.4994H2V3.00037Z"
+                    fill="white" />
+                </mask>
+                <g mask="url(#mask0)">
+                  <path id="Fill 1" fill-rule="evenodd" clip-rule="evenodd"
+                    d="M10.8049 14.8178L14.4619 20.7508C14.6219 21.0108 14.8719 21.0078 14.9729 20.9938C15.0739 20.9798 15.3169 20.9178 15.4049 20.6228L19.9779 5.17777C20.0579 4.90477 19.9109 4.71877 19.8449 4.65277C19.7809 4.58677 19.5979 4.44577 19.3329 4.52077L3.87695 9.04677C3.58394 9.13277 3.51994 9.37877 3.50594 9.47977C3.49194 9.58277 3.48794 9.83777 3.74695 10.0008L9.74794 13.7538L15.0499 8.39577C15.3409 8.10177 15.8159 8.09877 16.1109 8.38977C16.4059 8.68077 16.4079 9.15677 16.1169 9.45077L10.8049 14.8178ZM14.8949 22.4998C14.1989 22.4998 13.5609 22.1458 13.1849 21.5378L9.30794 15.2468L2.95194 11.2718C2.26694 10.8428 1.90894 10.0788 2.01994 9.27577C2.12994 8.47277 2.68094 7.83477 3.45494 7.60777L18.9109 3.08177C19.6219 2.87377 20.3839 3.07077 20.9079 3.59277C21.4319 4.11977 21.6269 4.88977 21.4149 5.60377L16.8419 21.0478C16.6129 21.8248 15.9729 22.3738 15.1719 22.4808C15.0779 22.4928 14.9869 22.4998 14.8949 22.4998Z"
+                    fill="currentColor" />
+                </g>
+              </g>
+            </g>
+          </svg>
+        </button>
+      </div>
+    </section>
+
+    <nav class="navbar">
+      <a href="javascript:void(0)">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <g id="Iconly/Light/Home">
+            <g id="Home">
+              <path id="Home_2"
+                d="M9.15722 20.7714V17.7047C9.1572 16.9246 9.79312 16.2908 10.581 16.2856H13.4671C14.2587 16.2856 14.9005 16.9209 14.9005 17.7047V17.7047V20.7809C14.9003 21.4432 15.4343 21.9845 16.103 22H18.0271C19.9451 22 21.5 20.4607 21.5 18.5618V18.5618V9.83784C21.4898 9.09083 21.1355 8.38935 20.538 7.93303L13.9577 2.6853C12.8049 1.77157 11.1662 1.77157 10.0134 2.6853L3.46203 7.94256C2.86226 8.39702 2.50739 9.09967 2.5 9.84736V18.5618C2.5 20.4607 4.05488 22 5.97291 22H7.89696C8.58235 22 9.13797 21.4499 9.13797 20.7714V20.7714"
+                stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+            </g>
+          </g>
+        </svg>
+      </a>
+      <a href="javascript:void(0)">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <g id="Iconly/Bold/Star">
+            <g id="Star">
+              <path id="Star_2"
+                d="M17.9184 14.3201C17.6594 14.5711 17.5404 14.9341 17.5994 15.2901L18.4884 20.2101C18.5634 20.6271 18.3874 21.0491 18.0384 21.2901C17.6964 21.5401 17.2414 21.5701 16.8684 21.3701L12.4394 19.0601C12.2854 18.9781 12.1144 18.9341 11.9394 18.9291H11.6684C11.5744 18.9431 11.4824 18.9731 11.3984 19.0191L6.96839 21.3401C6.74939 21.4501 6.50139 21.4891 6.25839 21.4501C5.66639 21.3381 5.27139 20.7741 5.36839 20.1791L6.25839 15.2591C6.31739 14.9001 6.19839 14.5351 5.93939 14.2801L2.32839 10.7801C2.02639 10.4871 1.92139 10.0471 2.05939 9.65012C2.19339 9.25412 2.53539 8.96512 2.94839 8.90012L7.91839 8.17912C8.29639 8.14012 8.62839 7.91012 8.79839 7.57012L10.9884 3.08012C11.0404 2.98012 11.1074 2.88812 11.1884 2.81012L11.2784 2.74012C11.3254 2.68812 11.3794 2.64512 11.4394 2.61012L11.5484 2.57012L11.7184 2.50012H12.1394C12.5154 2.53912 12.8464 2.76412 13.0194 3.10012L15.2384 7.57012C15.3984 7.89712 15.7094 8.12412 16.0684 8.17912L21.0384 8.90012C21.4584 8.96012 21.8094 9.25012 21.9484 9.65012C22.0794 10.0511 21.9664 10.4911 21.6584 10.7801L17.9184 14.3201Z"
+                fill="none" stroke-width="1.5" stroke="currentColor" />
+            </g>
+          </g>
+        </svg>
+      </a>
+      <a href="javascript:void(0)" class="add-button">
+        <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="16" cy="16" r="15" stroke="currentColor" stroke-width="2" />
+          <rect x="15" y="8" width="2" height="16" rx="1" fill="currentColor" />
+          <rect x="24" y="15" width="2" height="16" rx="1" transform="rotate(90 24 15)" fill="currentColor" />
+        </svg>
+      </a>
+      <a href="javascript:void(0)">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <g id="Iconly/Light/Paper">
+            <g id="Paper">
+              <path id="Stroke 1" fill-rule="evenodd" clip-rule="evenodd"
+                d="M14.7378 2.76181H8.0848C6.0048 2.75381 4.2998 4.41181 4.2508 6.49081V17.2038C4.2048 19.3168 5.8798 21.0678 7.9928 21.1148C8.0238 21.1148 8.0538 21.1158 8.0848 21.1148H16.0738C18.1678 21.0298 19.8178 19.2998 19.8028 17.2038V8.03781L14.7378 2.76181Z"
+                stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+              <path id="Stroke 3" d="M14.4751 2.75V5.659C14.4751 7.079 15.6231 8.23 17.0431 8.234H19.7981"
+                stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+              <path id="Stroke 5" d="M14.2881 15.3585H8.88806" stroke="currentColor" stroke-width="1.5"
+                stroke-linecap="round" stroke-linejoin="round" />
+              <path id="Stroke 7" d="M12.2432 11.606H8.88721" stroke="currentColor" stroke-width="1.5"
+                stroke-linecap="round" stroke-linejoin="round" />
+            </g>
+          </g>
+        </svg>
+      </a>
+      <a href="javascript:void(0)">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <g id="Iconly/Light/Setting">
+            <g id="Setting">
+              <path id="Path_33946" fill-rule="evenodd" clip-rule="evenodd"
+                d="M20.8067 7.62355L20.1842 6.54346C19.6577 5.62954 18.4907 5.31426 17.5755 5.83866V5.83866C17.1399 6.09528 16.6201 6.16809 16.1307 6.04103C15.6413 5.91396 15.2226 5.59746 14.9668 5.16131C14.8023 4.88409 14.7139 4.56833 14.7105 4.24598V4.24598C14.7254 3.72916 14.5304 3.22834 14.17 2.85761C13.8096 2.48688 13.3145 2.2778 12.7975 2.27802H11.5435C11.037 2.27801 10.5513 2.47985 10.194 2.83888C9.83669 3.19791 9.63717 3.68453 9.63961 4.19106V4.19106C9.6246 5.23686 8.77248 6.07675 7.72657 6.07664C7.40421 6.07329 7.08846 5.98488 6.81123 5.82035V5.82035C5.89606 5.29595 4.72911 5.61123 4.20254 6.52516L3.53435 7.62355C3.00841 8.53633 3.3194 9.70255 4.23 10.2322V10.2322C4.8219 10.574 5.18653 11.2055 5.18653 11.889C5.18653 12.5725 4.8219 13.204 4.23 13.5457V13.5457C3.32056 14.0719 3.00923 15.2353 3.53435 16.1453V16.1453L4.16593 17.2345C4.41265 17.6797 4.8266 18.0082 5.31619 18.1474C5.80578 18.2865 6.33064 18.2248 6.77462 17.976V17.976C7.21108 17.7213 7.73119 17.6515 8.21934 17.7821C8.70749 17.9128 9.12324 18.233 9.37416 18.6716C9.5387 18.9488 9.62711 19.2646 9.63046 19.5869V19.5869C9.63046 20.6435 10.487 21.5 11.5435 21.5H12.7975C13.8505 21.5 14.7055 20.6491 14.7105 19.5961V19.5961C14.7081 19.088 14.9089 18.6 15.2682 18.2407C15.6275 17.8814 16.1155 17.6806 16.6236 17.6831C16.9452 17.6917 17.2596 17.7797 17.5389 17.9393V17.9393C18.4517 18.4653 19.6179 18.1543 20.1476 17.2437V17.2437L20.8067 16.1453C21.0618 15.7074 21.1318 15.1859 21.0012 14.6963C20.8706 14.2067 20.5502 13.7893 20.111 13.5366V13.5366C19.6718 13.2839 19.3514 12.8665 19.2208 12.3769C19.0902 11.8872 19.1603 11.3658 19.4154 10.9279C19.5812 10.6383 19.8214 10.3981 20.111 10.2322V10.2322C21.0161 9.70283 21.3264 8.54343 20.8067 7.63271V7.63271V7.62355Z"
+                stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+              <circle id="Ellipse_737" cx="12.175" cy="11.889" r="2.63616" stroke="currentColor" stroke-width="1.5"
+                stroke-linecap="round" stroke-linejoin="round" />
+            </g>
+          </g>
+        </svg>
+      </a>
+    </nav>
+  </main>
+
+  <script type="text/javascript" src="app.js"></script>
+</body>
+
+</html>

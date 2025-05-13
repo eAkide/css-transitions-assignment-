@@ -1,0 +1,13 @@
+{
+  "name": "project-dashboard",
+  "version": "1.0.0",
+  "description": "A project dashboard",
+  "scripts": {
+    "start": "npx serve"
+  },
+  "author": "crayoncode",
+  "license": "MIT",
+  "dependencies": {
+    "serve": "~13.0.2"
+  }
+}
